@@ -924,7 +924,7 @@ dependencies = [
 
 [[package]]
 name = "hanzo_tools_runner"
-version = "1.0.2"
+version = "1.0.3"
 dependencies = [
  "anyhow",
  "async-std",
