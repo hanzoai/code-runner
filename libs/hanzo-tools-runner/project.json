@@ -1,0 +1,66 @@
+{
+  "name": "@shinkai_protocol/shinkai-tools-runner",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shinkai-tools-runner/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "cwd": "libs/shinkai-tools-runner",
+        "commands": [
+          "npx copyfiles --up 4 --verbose ./../../dist/apps/*shinkai-tool-*/definition.json ./tools/",
+          "cargo build"
+        ],
+        "parallel": false
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "args": ["--release"]
+        }
+      }
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "development",
+      "options": {
+        "cwd": "libs/shinkai-tools-runner",
+        "command": "cargo test --features=built-in-tools -- --test-threads=1"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "args": ["--release"]
+        }
+      }
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "cwd": "libs/shinkai-tools-runner",
+        "command": "cargo clippy -- -D warnings"
+      }
+    },
+    "publish": {
+      "dependsOn": ["^build"],
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "command": "cargo publish -p shinkai_tools_runner --allow-dirty"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    }
+  }
+}

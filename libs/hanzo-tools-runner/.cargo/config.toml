@@ -1,0 +1,3 @@
+
+[build]
+target-dir = "../../dist/libs/hanzo-tools-runner"

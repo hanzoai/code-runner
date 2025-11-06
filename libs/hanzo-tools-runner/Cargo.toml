@@ -1,0 +1,54 @@
+[package]
+name = "hanzo_tools_runner"
+description = "Rust library to execute hanzo-tools in a safe and performant environment"
+version = { workspace = true }
+edition = { workspace = true }
+keywords = ["hanzo", "tools", "runner", "safe", "ai"]
+include = ["src/**/*", "tools/**/*", "build.rs", "Cargo.toml", "Cargo.lock"]
+license-file = { workspace = true }
+homepage = { workspace = true }
+readme = { workspace = true }
+
+[dependencies]
+futures = "0.3.30"
+nanoid = "0.4.0"
+patch = "0.7.0"
+reqwest = { version = "0.11.26", features = ["blocking"] }
+hex-simd = "0.8.0"
+base64-simd = "0.8.0"
+phf = { version = "0.11.2", features = ["macros"] }
+serde = { version = "1.0.188", features = ["derive"] }
+serde_json = "1.0.117"
+tokio = { version = "1.36.0", features = ["full"] }
+lazy_static = "1.5.0"
+tokio-util = "0.7.11"
+derive_more = "0.99.18"
+derivative = "2.2.0"
+dispose = "0.5.0"
+zip = "2.2.0"
+tempfile = "3.13.0"
+log = "0.4.22"
+once_cell = { version = "1.20.2" }
+env_logger = "0.11.5"
+anyhow = { version = "1.0.93" }
+chrono = { version = "0.4.38" }
+tar = "0.4"
+flate2 = "1.0"
+toml_edit = "0.22.22"
+regex = "1.11"
+
+[dev-dependencies]
+rstest = "0.23.0"
+async-std = { version = "1.13", features = ["attributes"] }
+
+[build-dependencies]
+copy_to_output = "2.2.0"
+glob = "0.3"
+reqwest = { version = "0.11.26", features = ["blocking"] }
+zip = "2.2.0"
+once_cell = { version = "1.20.2" }
+tar = "0.4"
+flate2 = "1.0"
+
+[features]
+built-in-tools = []
