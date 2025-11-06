@@ -4,9 +4,9 @@ resolver = "2"
 
 [workspace.package]
 version = "1.0.2"
-repository = "https://github.com/dcSpark/shinkai-code-runner"
-keywords = ["shinkai", "tools", "safe", "ai"]
+repository = "https://github.com/hanzoai/code-runner"
+keywords = ["hanzo", "tools", "safe", "ai"]
 license-file = "LICENSE"
-homepage = "https://shinkai.com"
+homepage = "https://hanzo.ai"
 readme = "README.md"
 edition = "2021"

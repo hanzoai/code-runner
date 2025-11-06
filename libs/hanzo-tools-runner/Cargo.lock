@@ -1296,7 +1296,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "shinkai-tools-runner"
+name = "hanzo-tools-runner"
 version = "0.7.0"
 dependencies = [
  "futures",

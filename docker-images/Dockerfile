@@ -12,14 +12,14 @@ ENV CHROME_PATH=/usr/bin/chromium
 
 RUN apt-get install -y curl
 
-RUN groupadd -r shinkai-code-runner-user && useradd -r -g shinkai-code-runner-user -G audio,video shinkai-code-runner-user \
-    && mkdir -p /home/shinkai-code-runner-user/Downloads \
-    && chown -R shinkai-code-runner-user:shinkai-code-runner-user /home/shinkai-code-runner-user
+RUN groupadd -r hanzo-code-runner-user && useradd -r -g hanzo-code-runner-user -G audio,video hanzo-code-runner-user \
+    && mkdir -p /home/hanzo-code-runner-user/Downloads \
+    && chown -R hanzo-code-runner-user:hanzo-code-runner-user /home/hanzo-code-runner-user
 
 # Run everything after as non-privileged user.
-USER shinkai-code-runner-user
+USER hanzo-code-runner-user
 
-ENV HOME=/home/shinkai-code-runner-user
+ENV HOME=/home/hanzo-code-runner-user
 
 WORKDIR /app
 

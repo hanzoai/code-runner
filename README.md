@@ -1,18 +1,18 @@
-## Shinkai Tools
+## Hanzo Tools
 
-[![Mutable.ai Auto Wiki](https://img.shields.io/badge/Auto_Wiki-Mutable.ai-blue)](https://wiki.mutable.ai/dcSpark/shinkai-tools)
+[![Mutable.ai Auto Wiki](https://img.shields.io/badge/Auto_Wiki-Mutable.ai-blue)](https://wiki.mutable.ai/hanzoai/tools)
 
-Shinkai Tools serves as the ecosystem to execute Shinkai tools, provided by the Shinkai team or third-party developers, in a secure environment. It provides a sandboxed space for executing these tools,
+Hanzo Tools serves as the ecosystem to execute Hanzo tools, provided by the Hanzo team or third-party developers, in a secure environment. It provides a sandboxed space for executing these tools,
 ensuring that they run safely and efficiently, while also allowing for seamless integration with Rust code.
 
 This repository is a comprehensive collection of tools and utilities designed to facilitate the integration of JavaScript and Rust code. It provides a framework for executing Deno scripts within a Rust environment, allowing for seamless communication and data exchange between the two languages.
 
 The primary components of this repository include:
-- `libs/shinkai-tools-runner` is a Rust library used to execute a tool in a secured and performant Deno environment, providing a safe and efficient way to run tools within the Shinkai ecosystem.
+- `libs/hanzo-tools-runner` is a Rust library used to execute a tool in a secured and performant Deno environment, providing a safe and efficient way to run tools within the Hanzo ecosystem.
 
 ## Documentation
 
-More In Depth Codebase Documentation (Mutable.ai): [https://wiki.mutable.ai/dcSpark/shinkai-tools](https://wiki.mutable.ai/dcSpark/shinkai-tools)
+More In Depth Codebase Documentation (Mutable.ai): [https://wiki.mutable.ai/hanzoai/tools](https://wiki.mutable.ai/hanzoai/tools)
 
 ## Getting started
 
@@ -31,7 +31,7 @@ npx nx run-many -t test
 To call a tool from the Rust side, you can use the following example:
 
 ```rust
-use shinkai_tools_runner::{Tool, CodeFiles};
+use hanzo_tools_runner::{Tool, CodeFiles};
 use serde_json::json;
 
 #[tokio::main]
@@ -91,7 +91,7 @@ async fn main() {
         });
 
     // Run the tool with input data
-    let result = tool.run(None, json!({"message": "Hello, Shinkai!"}), None).await.unwrap();
+    let result = tool.run(None, json!({"message": "Hello, Hanzo!"}), None).await.unwrap();
 
     // Print the output
     println!("Tool output: {:?}", result.data["message"]); // Echoing: ${params.message}
@@ -100,4 +100,4 @@ async fn main() {
 }
 ```
 
-This example demonstrates how to set up and call a Shinkai tool from Rust, including how to pass input data and handle the output.
+This example demonstrates how to set up and call a Hanzo tool from Rust, including how to pass input data and handle the output.

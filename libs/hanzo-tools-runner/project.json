@@ -1,7 +1,7 @@
 {
-  "name": "@shinkai_protocol/shinkai-tools-runner",
+  "name": "@hanzo/hanzo-tools-runner",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shinkai-tools-runner/src",
+  "sourceRoot": "libs/hanzo-tools-runner/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -10,9 +10,9 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "cwd": "libs/shinkai-tools-runner",
+        "cwd": "libs/hanzo-tools-runner",
         "commands": [
-          "npx copyfiles --up 4 --verbose ./../../dist/apps/*shinkai-tool-*/definition.json ./tools/",
+          "npx copyfiles --up 4 --verbose ./../../dist/apps/*hanzo-tool-*/definition.json ./tools/",
           "cargo build"
         ],
         "parallel": false
@@ -30,7 +30,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "development",
       "options": {
-        "cwd": "libs/shinkai-tools-runner",
+        "cwd": "libs/hanzo-tools-runner",
         "command": "cargo test --features=built-in-tools -- --test-threads=1"
       },
       "configurations": {
@@ -45,7 +45,7 @@
       "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "cwd": "libs/shinkai-tools-runner",
+        "cwd": "libs/hanzo-tools-runner",
         "command": "cargo clippy -- -D warnings"
       }
     },
@@ -55,7 +55,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "command": "cargo publish -p shinkai_tools_runner --allow-dirty"
+        "command": "cargo publish -p hanzo_tools_runner --allow-dirty"
       },
       "configurations": {
         "development": {},

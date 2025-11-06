@@ -45,7 +45,7 @@ jobs:
             ~/.cargo/git/db/
             target/
           key: build-cargo-${{ hashFiles('**/Cargo.lock') }}
-          
+
       - name: Install dependencies
         run: |
           npm cache verify
@@ -66,9 +66,9 @@ jobs:
         run: |
           npx nx run-many -t lint --verbose
 
-      - name: Build shinkai-code-runner Docker image
+      - name: Build hanzo-code-runner Docker image
         run: |
-          cd docker-images && docker build -t dcspark/shinkai-code-runner:0.9.4 .
+          cd docker-images && docker build -t hanzoai/code-runner:0.9.4 .
 
       - name: Run NX test
         env:

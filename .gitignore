@@ -1,7 +1,7 @@
 apps/**/node_modules
 libs/**/node_modules
 
-libs/shinkai-tools-runner/target
+libs/hanzo-tools-runner/target
 
 node_modules
 dist
@@ -10,9 +10,9 @@ target
 
 .nx/cache
 .nx/workspace-data
-libs/shinkai-tools-runner/tools
-libs/shinkai-tools-runner/shinkai-tools-runner-resources
-apps/shinkai-tool-aave-load-requester/src/bundled-resources
+libs/hanzo-tools-runner/tools
+libs/hanzo-tools-runner/hanzo-tools-runner-resources
+apps/hanzo-tool-aave-load-requester/src/bundled-resources
 launch.json
 .DS_Store
-libs/shinkai-tools-runner/shinkai-tools-runner-execution-storage
+libs/hanzo-tools-runner/hanzo-tools-runner-execution-storage

@@ -1,5 +1,5 @@
 /**
- * Script to bundle and process Shinkai tools
+ * Script to bundle and process Hanzo tools
  *
  * This script takes an entry file and output folder as arguments, bundles the tool code,
  * generates embeddings for the tool definition, and creates an extended tool definition
@@ -21,7 +21,7 @@ import { join } from 'node:path';
 import minimist from 'npm:minimist';
 import fs from 'node:fs';
 
-console.log('🚀 Starting Shinkai Tool bundler...');
+console.log('🚀 Starting Hanzo Tool bundler...');
 
 // Extended type that includes code and embedding metadata
 type ExtendedToolDefinition = ToolDefinition<any> & {
